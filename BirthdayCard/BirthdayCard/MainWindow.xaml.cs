@@ -27,6 +27,7 @@ namespace BirthdayCard
     public partial class MainWindow : Window
     {
         private static MainWindow _staticHandle;
+        private static bool _isPlaying = false;
 
         public MainWindow()
         {
@@ -109,11 +110,28 @@ namespace BirthdayCard
             ResetControlButtonsAvailability();
         }
 
-        public static void PlayVideo()
+        public static void PlayVideo(string assetName)
         {
-            _staticHandle.Player.Visibility = Visibility.Visible;
-            _staticHandle.Player.Source = new Uri("Assets\\Scene_MovieClip.mp4", UriKind.Relative);
+            if (!_isPlaying)
+            {
+                _staticHandle.Player.Source = new Uri(assetName, UriKind.Relative);
+                System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+                dispatcherTimer.Tag = assetName;
+                dispatcherTimer.Tick += dispatcherTimer_Tick;
+                dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 500);
+                dispatcherTimer.Start();
+                _isPlaying = true;
+            }
+        }
+
+        private static void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            var timer = sender as System.Windows.Threading.DispatcherTimer;
+            var source = new Uri(timer.Tag as string, UriKind.Relative);
+            timer.Tick -= dispatcherTimer_Tick;
+            timer.Stop();
             _staticHandle.Player.Play();
+            _staticHandle.Player.Visibility = Visibility.Visible;
             _staticHandle.DisableControlButtons();
         }
 
@@ -137,6 +155,7 @@ namespace BirthdayCard
         {
             Player.Visibility = Visibility.Collapsed;
             ResetControlButtonsAvailability();
+            _isPlaying = false;
         }
     }
 

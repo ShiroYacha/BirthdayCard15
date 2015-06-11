@@ -187,6 +187,9 @@
   <ItemGroup>
     <Resource Include="Assets\Card_HappyBirthdayLeft.png" />
     <Resource Include="Assets\Card_HappyBirthdayRight.png" />
+    <Content Include="Assets\Scene_HappyBirthday2.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Scene_MovieClip.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

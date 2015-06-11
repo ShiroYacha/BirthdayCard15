@@ -16,8 +16,8 @@
         Loaded="Window_Loaded">
     
     <Window.Resources>
-        <lib:FlipTransition x:Key="LeftFlip" Duration="0:0:0.5" Direction="Right"/>
-        <lib:FlipTransition x:Key="RightFlip" Duration="0:0:0.5" Direction="Left"/>
+        <lib:FlipTransition x:Key="LeftFlip" Duration="0:0:0.7" Direction="Right"/>
+        <lib:FlipTransition x:Key="RightFlip" Duration="0:0:0.7" Direction="Left"/>
         <lib:StoryboardTransition  x:Key="BasicTransition">
             <lib:StoryboardTransition.NewContentStyle>
                 <Style TargetType="ContentPresenter">
