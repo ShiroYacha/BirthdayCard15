@@ -12,7 +12,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        Title="Birthday card 2015" Height="540" Width="960"
+        Title="Birthday card 2015" Height="545" Width="960"
         Loaded="Window_Loaded">
     
     <Window.Resources>
@@ -39,15 +39,25 @@
             </lib:StoryboardTransition.NewContentStoryboard>
         </lib:StoryboardTransition>
     </Window.Resources>
-    
+
     <Window.Background>
-        <SolidColorBrush Opacity="0.1" Color="White"/>
+        <SolidColorBrush Color="Transparent"/>
     </Window.Background>
     
     <Grid Name="MainGrid">
 
-    
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Canvas Name="CardCorner" Grid.Row="1">
+            <Polygon Points="0,0 960,0 480,5" Stroke="Black" Fill="Black" />
+        </Canvas>
+
         <Grid Name="CardGrid">
+            <Grid.Background>
+                <SolidColorBrush Opacity="0.1" Color="White"/>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -75,7 +85,7 @@
             </lib:TransitionPresenter>
         </Grid>
 
-        <MediaElement Name="Player" Width="960" Height="540" LoadedBehavior="Manual" IsEnabled="True" Stretch="Fill" MediaEnded="Player_MediaEnded"></MediaElement>
+        <MediaElement Name="Player" Width="960" Height="540" LoadedBehavior="Manual" IsEnabled="True" Stretch="Fill" MediaEnded="Player_MediaEnded" Visibility="Visible"></MediaElement>
 
         <Grid Name="ControlGrid">
             <Grid.ColumnDefinitions>

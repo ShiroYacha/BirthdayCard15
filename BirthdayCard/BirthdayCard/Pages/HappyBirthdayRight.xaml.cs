@@ -33,5 +33,12 @@ namespace BirthdayCard.Pages
             _staticHandle.Card.Visibility = Visibility.Visible;
             _staticHandle.Box.Visibility = Visibility.Collapsed;
         }
+
+
+        public static void UnTriggerVisualChange()
+        {
+            _staticHandle.Card.Visibility = Visibility.Collapsed;
+            _staticHandle.Box.Visibility = Visibility.Visible;
+        }
     }
 }

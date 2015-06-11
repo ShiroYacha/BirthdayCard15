@@ -26,7 +26,7 @@ namespace BirthdayCard
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static MainWindow _staticHandle;
+        public static MainWindow _staticHandle;
 
         public static event Action MediaEnded;
 
@@ -106,11 +106,16 @@ namespace BirthdayCard
 
         private void NextPageButton_Click(object sender, RoutedEventArgs e)
         {
-            RightPage.Transition = FindResource("RightFlip") as Transition;
-            LeftPage.Transition = FindResource("BasicTransition") as Transition;
-            _dataRight.SelectedIndex++;
-            _dataLeft.SelectedIndex++;
-            ResetControlButtonsAvailability();
+            if (_dataRight.SelectedIndex < _dataRight.Items.Count - 1)
+            {
+                RightPage.Transition = FindResource("RightFlip") as Transition;
+                LeftPage.Transition = FindResource("BasicTransition") as Transition;
+                _dataRight.SelectedIndex++;
+                _dataLeft.SelectedIndex++;
+                ResetControlButtonsAvailability();
+            }
+            else
+                this.Close();
         }
 
         public static void PlayVideo(string assetName)
@@ -138,15 +143,17 @@ namespace BirthdayCard
             _staticHandle.DisableControlButtons();
         }
 
-        private void ResetControlButtonsAvailability()
+        public void ResetControlButtonsAvailability()
         {
             BackPageButton.IsEnabled = _dataLeft.SelectedIndex > 0;
-            NextPageButton.IsEnabled = _dataRight.SelectedIndex < _dataRight.Items.Count - 1;
+            NextPageButton.IsEnabled = _dataRight.SelectedIndex < _dataRight.Items.Count;
             BackPageButton.Visibility = BackPageButton.IsEnabled ? Visibility.Visible : Visibility.Collapsed;
             NextPageButton.Visibility = NextPageButton.IsEnabled ? Visibility.Visible : Visibility.Collapsed;
+            CardCorner.Visibility = (BackPageButton.IsEnabled && NextPageButton.IsEnabled)? Visibility.Visible : Visibility.Collapsed;
+
         }
 
-        private void DisableControlButtons()
+        public void DisableControlButtons()
         {
             BackPageButton.IsEnabled = false;
             NextPageButton.IsEnabled = false;
@@ -159,7 +166,8 @@ namespace BirthdayCard
             Player.Visibility = Visibility.Collapsed;
             ResetControlButtonsAvailability();
             _isPlaying = false;
-            MediaEnded();
+            if(MediaEnded!=null)
+                MediaEnded();
         }
     }
 

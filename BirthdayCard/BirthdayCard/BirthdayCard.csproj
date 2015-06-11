@@ -189,7 +189,10 @@
     <Resource Include="Assets\Card_HappyBirthdayRight.png" />
     <Resource Include="Assets\PresentBoxLeft.png" />
     <Resource Include="Assets\PresentBoxRight.png" />
-    <Content Include="Assets\Scene_HappyBirthday2.mp4">
+    <Resource Include="Assets\HeartOfHearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Assets\Scene_HappyBirthday.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Scene_MovieClip.mp4">

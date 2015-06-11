@@ -7,6 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="540" d:DesignWidth="480">
     <Grid>
-        <Rectangle Fill="Red" HorizontalAlignment="Left" Height="540" Stroke="Black" VerticalAlignment="Top" Width="480"/>
+        <Rectangle Fill="#710004" HorizontalAlignment="Left" Height="540" Stroke="Black" VerticalAlignment="Top" Width="480"/>
+        <Image Source="pack://application:,,,/Assets/HeartOfHearts.png" Width="200" Margin="0,-200,0,0"/>
+        <TextBlock FontFamily="SketchFlow Print" Foreground="White" FontSize="20" Margin="77,299,-77,-299"><Run Text="&#x9;Happy birthday "/><LineBreak/><Run Text="      "/><LineBreak/><Run Text="      my dear dear niuer!"/></TextBlock>
     </Grid>
 </UserControl>

@@ -8,6 +8,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Image Name="Box" Source="pack://application:,,,/Assets/PresentBoxRight.png"/>
-        <Image Name="Card" Source="pack://application:,,,/Assets/Card_HappyBirthdayRight.png" Visibility="Collapsed"/>
+        <Image Name="Card" Source="pack://application:,,,/Assets/Card_HappyBirthdayRight.png" Visibility="Collapsed" Margin="-1,0,1,0"/>
     </Grid>
 </UserControl>
