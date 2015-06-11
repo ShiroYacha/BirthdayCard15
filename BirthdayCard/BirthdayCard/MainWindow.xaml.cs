@@ -26,23 +26,29 @@ namespace BirthdayCard
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static MainWindow _staticHandle;
+
         public MainWindow()
         {
             InitializeComponent();
+            _staticHandle = this;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             PropertyInfo[] props = typeof(Brushes).GetProperties();
 
-            List<object> dataLeft = new List<object>(10);
-            List<object> dataRight = new List<object>(10);
+            List<object> dataLeft = new List<object>(5);
+            List<object> dataRight = new List<object>(5);
 
             dataLeft.Add(new Pages.CoverLeft());
             dataRight.Add(new Pages.CoverRight());
 
             dataLeft.Add(new Pages.MoviePageLeft());
             dataRight.Add(new Pages.MoviePageRight());
+
+            dataLeft.Add(new Pages.HappyBirthdayLeft());
+            dataRight.Add(new Pages.HappyBirthdayRight());
 
             dataLeft.Add(new Pages.BackCoverLeft());
             dataRight.Add(new Pages.BackCoverRight());
@@ -52,9 +58,13 @@ namespace BirthdayCard
             _dataRight.Items.Clear();
             _dataRight.ItemsSource = dataRight;
 
-            _dataRight.SelectedIndex++;
-            _dataLeft.SelectedIndex++;
+            _dataRight.SelectedIndex=0;
+            _dataLeft.SelectedIndex=0;
+
+            ResetControlButtonsAvailability();
+
         }
+
 
         private void BackPageButton_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -86,6 +96,7 @@ namespace BirthdayCard
                 RightPage.Transition = FindResource("BasicTransition") as Transition;
                 _dataLeft.SelectedIndex--;
                 _dataRight.SelectedIndex--;
+                ResetControlButtonsAvailability();
             }
         }
 
@@ -95,8 +106,38 @@ namespace BirthdayCard
             LeftPage.Transition = FindResource("BasicTransition") as Transition;
             _dataRight.SelectedIndex++;
             _dataLeft.SelectedIndex++;
+            ResetControlButtonsAvailability();
         }
 
+        public static void PlayVideo()
+        {
+            _staticHandle.Player.Visibility = Visibility.Visible;
+            _staticHandle.Player.Source = new Uri("Assets\\Scene_MovieClip.mp4", UriKind.Relative);
+            _staticHandle.Player.Play();
+            _staticHandle.DisableControlButtons();
+        }
+
+        private void ResetControlButtonsAvailability()
+        {
+            BackPageButton.IsEnabled = _dataLeft.SelectedIndex > 0;
+            NextPageButton.IsEnabled = _dataRight.SelectedIndex < _dataRight.Items.Count - 1;
+            BackPageButton.Visibility = BackPageButton.IsEnabled ? Visibility.Visible : Visibility.Collapsed;
+            NextPageButton.Visibility = NextPageButton.IsEnabled ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void DisableControlButtons()
+        {
+            BackPageButton.IsEnabled = false;
+            NextPageButton.IsEnabled = false;
+            BackPageButton.Visibility = Visibility.Collapsed;
+            NextPageButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void Player_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            Player.Visibility = Visibility.Collapsed;
+            ResetControlButtonsAvailability();
+        }
     }
 
     class ListTransitionSelector : TransitionSelector

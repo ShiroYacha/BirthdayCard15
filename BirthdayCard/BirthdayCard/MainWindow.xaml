@@ -46,7 +46,8 @@
     
     <Grid Name="MainGrid">
 
-        <Grid Name="DataGrid">
+    
+        <Grid Name="CardGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -73,6 +74,9 @@
                              MaxWidth="480" MaxHeight="540">
             </lib:TransitionPresenter>
         </Grid>
+
+        <MediaElement Name="Player" Width="960" Height="540" LoadedBehavior="Manual" IsEnabled="True" Stretch="Fill" MediaEnded="Player_MediaEnded"></MediaElement>
+
         <Grid Name="ControlGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>

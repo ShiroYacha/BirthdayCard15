@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:BirthdayCard.Pages"
              mc:Ignorable="d" 
              d:DesignHeight="540" d:DesignWidth="480">
-    <Grid>
-        <Rectangle Fill="Blue" HorizontalAlignment="Left" Height="540" Stroke="Black" VerticalAlignment="Top" Width="480"/>
+    <Grid Background="Black">
     </Grid>
 </UserControl>

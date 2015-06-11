@@ -115,6 +115,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\HappyBirthdayLeft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HappyBirthdayRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MoviePageLeft.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +144,12 @@
     </Compile>
     <Compile Include="Pages\CoverRight.xaml.cs">
       <DependentUpon>CoverRight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HappyBirthdayLeft.xaml.cs">
+      <DependentUpon>HappyBirthdayLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HappyBirthdayRight.xaml.cs">
+      <DependentUpon>HappyBirthdayRight.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MoviePageLeft.xaml.cs">
       <DependentUpon>MoviePageLeft.xaml</DependentUpon>
@@ -169,6 +183,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Card_HappyBirthdayLeft.png" />
+    <Resource Include="Assets\Card_HappyBirthdayRight.png" />
+    <Content Include="Assets\Scene_MovieClip.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
