@@ -27,7 +27,7 @@ namespace BirthdayCard.Pages
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindow.PlayVideo("Assets\\Scene_MovieClip.mp4");
+            //MainWindow.PlayVideo("Assets\\Scene_MovieClip.mp4");
         }
 
     }

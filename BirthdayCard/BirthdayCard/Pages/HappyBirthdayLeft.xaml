@@ -5,9 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BirthdayCard.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300"
+             d:DesignHeight="540" d:DesignWidth="480"
              Loaded="UserControl_Loaded">
     <Grid>
-        <Image Source="pack://application:,,,/Assets/Card_HappyBirthdayLeft.png"></Image>
+        <Image Name="Box" Source="pack://application:,,,/Assets/PresentBoxLeft.png"/>
+        <Image Name="Card" Source="pack://application:,,,/Assets/Card_HappyBirthdayLeft.png" Visibility="Collapsed"/>
+        <Button x:Name="Open" HorizontalAlignment="Left" Height="181" Margin="59,253,0,0"  Opacity="0" VerticalAlignment="Top" Width="182" MouseEnter="Open_MouseEnter" MouseLeave="Open_MouseLeave" Click="Open_Click"/>
     </Grid>
 </UserControl>

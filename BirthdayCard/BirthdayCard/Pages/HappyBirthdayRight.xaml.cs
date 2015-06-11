@@ -20,9 +20,18 @@ namespace BirthdayCard.Pages
     /// </summary>
     public partial class HappyBirthdayRight : UserControl
     {
+        private static HappyBirthdayRight _staticHandle;
+
         public HappyBirthdayRight()
         {
             InitializeComponent();
+            _staticHandle = this;
+        }
+
+        public static void TriggerVisualChange()
+        {
+            _staticHandle.Card.Visibility = Visibility.Visible;
+            _staticHandle.Box.Visibility = Visibility.Collapsed;
         }
     }
 }

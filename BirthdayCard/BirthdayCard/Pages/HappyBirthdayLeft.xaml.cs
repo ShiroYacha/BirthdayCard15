@@ -27,7 +27,32 @@ namespace BirthdayCard.Pages
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            Open.Visibility = Visibility.Visible;
+        }
+
+        private void MainWindow_MediaEnded()
+        {
+            MainWindow.MediaEnded -= MainWindow_MediaEnded;
+            Card.Visibility = Visibility.Visible;
+            Box.Visibility = Visibility.Collapsed;
+            HappyBirthdayRight.TriggerVisualChange();
+        }
+
+        private void Open_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Open.Opacity = 0.5;
+        }
+
+        private void Open_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Open.Opacity = 0.0;
+        }
+
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MediaEnded += MainWindow_MediaEnded;
             MainWindow.PlayVideo("Assets\\Scene_HappyBirthday2.mp4");
+            Open.Visibility = Visibility.Collapsed;
         }
     }
 }

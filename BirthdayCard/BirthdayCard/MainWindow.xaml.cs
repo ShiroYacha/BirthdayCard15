@@ -27,6 +27,9 @@ namespace BirthdayCard
     public partial class MainWindow : Window
     {
         private static MainWindow _staticHandle;
+
+        public static event Action MediaEnded;
+
         private static bool _isPlaying = false;
 
         public MainWindow()
@@ -156,6 +159,7 @@ namespace BirthdayCard
             Player.Visibility = Visibility.Collapsed;
             ResetControlButtonsAvailability();
             _isPlaying = false;
+            MediaEnded();
         }
     }
 
