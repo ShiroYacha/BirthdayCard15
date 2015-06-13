@@ -119,6 +119,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\HappyBirthdayPreLeft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HappyBirthdayPreRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HappyBirthdayRight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,6 +155,12 @@
     </Compile>
     <Compile Include="Pages\HappyBirthdayLeft.xaml.cs">
       <DependentUpon>HappyBirthdayLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HappyBirthdayPreLeft.xaml.cs">
+      <DependentUpon>HappyBirthdayPreLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HappyBirthdayPreRight.xaml.cs">
+      <DependentUpon>HappyBirthdayPreRight.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HappyBirthdayRight.xaml.cs">
       <DependentUpon>HappyBirthdayRight.xaml</DependentUpon>

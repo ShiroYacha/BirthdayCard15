@@ -16,17 +16,22 @@ using System.Windows.Shapes;
 namespace BirthdayCard.Pages
 {
     /// <summary>
-    /// Interaction logic for HappyBirthdayRight.xaml
+    /// Interaction logic for HappyBirthdayPreRight.xaml
     /// </summary>
-    public partial class HappyBirthdayRight : UserControl
+    public partial class HappyBirthdayPreRight : UserControl
     {
-        private static HappyBirthdayRight _staticeHandle;
+        private static HappyBirthdayPreRight _staticHandle;
 
-        public HappyBirthdayRight()
+        public HappyBirthdayPreRight()
         {
             InitializeComponent();
-            _staticeHandle = this;
+            _staticHandle = this;
         }
 
+        public static void Trigger()
+        {
+            _staticHandle.Box.Visibility = Visibility.Collapsed;
+            _staticHandle.Card.Visibility = Visibility.Visible;
+        }
     }
 }

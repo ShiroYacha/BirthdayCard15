@@ -20,27 +20,18 @@ namespace BirthdayCard.Pages
     /// </summary>
     public partial class HappyBirthdayLeft : UserControl
     {
+        private static HappyBirthdayLeft _staticeHandle;
+
         public HappyBirthdayLeft()
         {
             InitializeComponent();
+            _staticeHandle = this;
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             Open.Visibility = Visibility.Visible;
             MainWindow._staticHandle.DisableControlButtons();
-            Card.Visibility = Visibility.Collapsed;
-            Box.Visibility = Visibility.Visible;
-            HappyBirthdayRight.UnTriggerVisualChange();
-        }
-
-        private void MainWindow_MediaEnded()
-        {
-            MainWindow.MediaEnded -= MainWindow_MediaEnded;
-            MainWindow._staticHandle.ResetControlButtonsAvailability();
-            Card.Visibility = Visibility.Visible;
-            Box.Visibility = Visibility.Collapsed;
-            HappyBirthdayRight.TriggerVisualChange();
         }
 
         private void Open_MouseEnter(object sender, MouseEventArgs e)
@@ -55,9 +46,7 @@ namespace BirthdayCard.Pages
 
         private void Open_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.MediaEnded += MainWindow_MediaEnded;
-            MainWindow.PlayVideo("Assets\\Scene_HappyBirthday.mp4");
-            Open.Visibility = Visibility.Collapsed;
+            MainWindow.TriggerNextPageOpenStyle();
         }
     }
 }

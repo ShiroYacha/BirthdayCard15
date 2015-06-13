@@ -85,7 +85,7 @@
             </lib:TransitionPresenter>
         </Grid>
 
-        <MediaElement Name="Player" Width="960" Height="540" LoadedBehavior="Manual" IsEnabled="True" Stretch="Fill" MediaEnded="Player_MediaEnded" Visibility="Visible"></MediaElement>
+        <MediaElement Name="Player" Width="960" Height="540" ScrubbingEnabled="True" LoadedBehavior="Manual"  UnloadedBehavior="Manual" IsEnabled="True" Stretch="Fill" MediaEnded="Player_MediaEnded" Visibility="Visible"></MediaElement>
 
         <Grid Name="ControlGrid">
             <Grid.ColumnDefinitions>

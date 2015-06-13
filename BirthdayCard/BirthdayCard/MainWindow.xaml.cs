@@ -54,6 +54,9 @@ namespace BirthdayCard
             dataLeft.Add(new Pages.HappyBirthdayLeft());
             dataRight.Add(new Pages.HappyBirthdayRight());
 
+            dataLeft.Add(new Pages.HappyBirthdayPreLeft());
+            dataRight.Add(new Pages.HappyBirthdayPreRight());
+
             dataLeft.Add(new Pages.BackCoverLeft());
             dataRight.Add(new Pages.BackCoverRight());
 
@@ -92,10 +95,26 @@ namespace BirthdayCard
 
         }
 
+        public static void TriggerNextPageOpenStyle()
+        {
+            if (_staticHandle._dataRight.SelectedIndex < _staticHandle._dataRight.Items.Count - 1)
+            {
+                
+                _staticHandle.RightPage.Transition = _staticHandle.FindResource("LeftFlip") as Transition;
+                _staticHandle.LeftPage.Transition = _staticHandle.FindResource("RightFlip") as Transition;
+                _staticHandle._dataRight.SelectedIndex++;
+                _staticHandle._dataLeft.SelectedIndex++;
+                _staticHandle.ResetControlButtonsAvailability();
+            }
+            else
+                _staticHandle.Close();
+        }
+
         private void BackPageButton_Click(object sender, RoutedEventArgs e)
         {
             if (_dataLeft.SelectedIndex > 0 && _dataRight.SelectedIndex > 0)
             {
+                Player.Visibility = Visibility.Collapsed;
                 LeftPage.Transition = FindResource("LeftFlip") as Transition;
                 RightPage.Transition = FindResource("BasicTransition") as Transition;
                 _dataLeft.SelectedIndex--;
@@ -108,6 +127,7 @@ namespace BirthdayCard
         {
             if (_dataRight.SelectedIndex < _dataRight.Items.Count - 1)
             {
+                Player.Visibility = Visibility.Collapsed;
                 RightPage.Transition = FindResource("RightFlip") as Transition;
                 LeftPage.Transition = FindResource("BasicTransition") as Transition;
                 _dataRight.SelectedIndex++;
@@ -123,25 +143,26 @@ namespace BirthdayCard
             if (!_isPlaying)
             {
                 _staticHandle.Player.Source = new Uri(assetName, UriKind.Relative);
-                System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-                dispatcherTimer.Tag = assetName;
-                dispatcherTimer.Tick += dispatcherTimer_Tick;
-                dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 500);
-                dispatcherTimer.Start();
+                //System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+                //dispatcherTimer.Tick += dispatcherTimer_Tick;
+                //dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 50);
+                //dispatcherTimer.Start();
+                _staticHandle.Player.Visibility = Visibility.Visible;
+                _staticHandle.Player.Play();
+                _staticHandle.DisableControlButtons();
                 _isPlaying = true;
             }
         }
 
-        private static void dispatcherTimer_Tick(object sender, EventArgs e)
-        {
-            var timer = sender as System.Windows.Threading.DispatcherTimer;
-            var source = new Uri(timer.Tag as string, UriKind.Relative);
-            timer.Tick -= dispatcherTimer_Tick;
-            timer.Stop();
-            _staticHandle.Player.Play();
-            _staticHandle.Player.Visibility = Visibility.Visible;
-            _staticHandle.DisableControlButtons();
-        }
+        //private static void dispatcherTimer_Tick(object sender, EventArgs e)
+        //{
+        //    var timer = sender as System.Windows.Threading.DispatcherTimer;
+        //    timer.Tick -= dispatcherTimer_Tick;
+        //    timer.Stop();
+        //    _staticHandle.Player.Visibility = Visibility.Visible;
+        //    _staticHandle.Player.Play();
+        //    _staticHandle.DisableControlButtons();
+        //}
 
         public void ResetControlButtonsAvailability()
         {
@@ -163,7 +184,7 @@ namespace BirthdayCard
 
         private void Player_MediaEnded(object sender, RoutedEventArgs e)
         {
-            Player.Visibility = Visibility.Collapsed;
+            Player.Pause();
             ResetControlButtonsAvailability();
             _isPlaying = false;
             if(MediaEnded!=null)

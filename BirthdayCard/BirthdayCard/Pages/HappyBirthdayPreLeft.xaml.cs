@@ -16,19 +16,27 @@ using System.Windows.Shapes;
 namespace BirthdayCard.Pages
 {
     /// <summary>
-    /// Interaction logic for MoviePageLeft.xaml
+    /// Interaction logic for HappyBirthdayPreLeft.xaml
     /// </summary>
-    public partial class MoviePageLeft : UserControl
+    public partial class HappyBirthdayPreLeft : UserControl
     {
-        public MoviePageLeft()
+        public HappyBirthdayPreLeft()
         {
             InitializeComponent();
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            //MainWindow.PlayVideo("Assets\\Scene_MovieClip.mp4");
+            MainWindow.MediaEnded += MainWindow_MediaEnded;
+            MainWindow.PlayVideo("Assets\\Scene_HappyBirthday.mp4");
         }
 
+        private void MainWindow_MediaEnded()
+        {
+            MainWindow.MediaEnded -= MainWindow_MediaEnded;
+            Box.Visibility = Visibility.Collapsed;
+            Card.Visibility = Visibility.Visible;
+            HappyBirthdayPreRight.Trigger();
+        }
     }
 }

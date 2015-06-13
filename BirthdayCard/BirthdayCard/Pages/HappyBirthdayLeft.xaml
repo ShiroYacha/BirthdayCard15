@@ -10,6 +10,7 @@
     <Grid>
         <Image Name="Box" Source="pack://application:,,,/Assets/PresentBoxLeft.png" Margin="2,0,-2,0"/>
         <Image Name="Card" Source="pack://application:,,,/Assets/Card_HappyBirthdayLeft.png" Visibility="Collapsed"/>
+        <TextBlock Foreground="Red" FontSize="18" FontWeight="ExtraLight" FontFamily="SketchFlow Print" Margin="250,290,0,0">Last but not least ~</TextBlock>
         <Button x:Name="Open" HorizontalAlignment="Left" Height="181" Margin="59,253,0,0"  Opacity="0" VerticalAlignment="Top" Width="182" MouseEnter="Open_MouseEnter" MouseLeave="Open_MouseLeave" Click="Open_Click"/>
     </Grid>
 </UserControl>

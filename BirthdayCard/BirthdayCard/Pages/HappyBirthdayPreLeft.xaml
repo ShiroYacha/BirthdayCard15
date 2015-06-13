@@ -1,13 +1,14 @@
-﻿<UserControl x:Class="BirthdayCard.Pages.HappyBirthdayRight"
+﻿<UserControl x:Class="BirthdayCard.Pages.HappyBirthdayPreLeft"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BirthdayCard.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="540" d:DesignWidth="480">
+             d:DesignHeight="300" d:DesignWidth="300"
+             Loaded="UserControl_Loaded">
     <Grid>
-        <Image Name="Box" Source="pack://application:,,,/Assets/PresentBoxRight.png"/>
-        <Image Name="Card" Source="pack://application:,,,/Assets/Card_HappyBirthdayRight.png" Visibility="Collapsed"/>
+        <Image Name="Box" Source="pack://application:,,,/Assets/PresentBoxLeft.png"/>
+        <Image Name="Card" Source="pack://application:,,,/Assets/Card_HappyBirthdayLeft.png" Visibility="Collapsed"/>
     </Grid>
 </UserControl>
