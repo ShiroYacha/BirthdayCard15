@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="BirthdayCard.Pages.LetterRight"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BirthdayCard.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="480">
+    <Grid>
+        <Rectangle Fill="#710004" HorizontalAlignment="Left" Height="540" Stroke="Black" VerticalAlignment="Top" Width="480"/>
+        <TextBlock FontFamily="SketchFlow Print" Foreground="White" FontSize="18" Margin="50"  TextWrapping="Wrap">
+            异地恋好辛苦, 这种现状至少也还要持续一年。。。每次小妞儿不开心的时候, 老公也只能在镜头这边卖萌哄着就小妞儿。。。 每次想跟你出去玩的时候, 老公也就只能寂寞的翻着以前的相册。。。 
+            <LineBreak/><LineBreak/>
+            小妞儿, 接下来的一段时间我们都得过得好辛苦。。。但是, 我就是这么喜欢你~! 我知道一点儿的付出都是值得的~! 为了以后天天能跟你在一起现在的分开都不算什么! 
+            <LineBreak/><LineBreak/>
+            因为 。。。
+        </TextBlock>
+    </Grid>
+</UserControl>

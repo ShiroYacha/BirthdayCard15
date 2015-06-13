@@ -48,8 +48,17 @@ namespace BirthdayCard
             dataLeft.Add(new Pages.CoverLeft());
             dataRight.Add(new Pages.CoverRight());
 
+            dataLeft.Add(new Pages.OpeningLeft());
+            dataRight.Add(new Pages.OpeningRight());
+
+            dataLeft.Add(new Pages.LetterLeft());
+            dataRight.Add(new Pages.LetterRight());
+
             dataLeft.Add(new Pages.MoviePageLeft());
             dataRight.Add(new Pages.MoviePageRight());
+
+            dataLeft.Add(new Pages.Letter2Left());
+            dataRight.Add(new Pages.Letter2Right());
 
             dataLeft.Add(new Pages.HappyBirthdayLeft());
             dataRight.Add(new Pages.HappyBirthdayRight());

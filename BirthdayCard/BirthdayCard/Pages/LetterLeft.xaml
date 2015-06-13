@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="BirthdayCard.Pages.LetterLeft"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BirthdayCard.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="480">
+    <Grid>
+        <Rectangle Fill="#710004" HorizontalAlignment="Left" Height="540" Stroke="Black" VerticalAlignment="Top" Width="480"/>
+        <TextBlock FontFamily="SketchFlow Print" Foreground="White" FontSize="18" Margin="50"  TextWrapping="Wrap">
+            老公也是第一次给你写贺卡呢~ 上次那张只有短短的两句话, 所以这也算是老公第一次给你写信呢 :)
+            <LineBreak/><LineBreak/>
+            4个多月没见了, 虽然几乎天天都在视频, 但还是非常想念你... 想可劲儿抱你, mua你, 但是小妞儿看得到却摸不着! 所以这次暑假我一定要好好珍惜跟你在一起的时间, 以为这将是我最珍贵的一个夏天! 我要和小妞儿一起吃遍最好吃的东西, 每天逛街逛到腿软 :D
+            <LineBreak/><LineBreak/>
+            但是再想想分别了这么久, 暑假也不能像在rainbow那时天天见面, 天天一起吃早餐, 一起做晚饭, 一起抱着睡, 就好心赛... 不过就像小妞儿说的那样, 我们的感情是灰常serious的! 所以要往远一点去想嘛~ 这次实习对小妞来说也灰常重要, 所以老公这次回来要可劲儿陪你, 
+            哪怕不能一直出去玩也要好好在一起! 老公也要陪你自习, 跟你一起规划接下来的事儿!
+            <LineBreak/><LineBreak/>
+        </TextBlock>
+
+    </Grid>
+</UserControl>

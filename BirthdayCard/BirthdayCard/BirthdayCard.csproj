@@ -131,11 +131,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Letter2Left.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Letter2Right.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LetterLeft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LetterRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MoviePageLeft.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MoviePageRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OpeningLeft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OpeningRight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,11 +189,29 @@
     <Compile Include="Pages\HappyBirthdayRight.xaml.cs">
       <DependentUpon>HappyBirthdayRight.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Letter2Left.xaml.cs">
+      <DependentUpon>Letter2Left.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Letter2Right.xaml.cs">
+      <DependentUpon>Letter2Right.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LetterLeft.xaml.cs">
+      <DependentUpon>LetterLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LetterRight.xaml.cs">
+      <DependentUpon>LetterRight.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MoviePageLeft.xaml.cs">
       <DependentUpon>MoviePageLeft.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MoviePageRight.xaml.cs">
       <DependentUpon>MoviePageRight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OpeningLeft.xaml.cs">
+      <DependentUpon>OpeningLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OpeningRight.xaml.cs">
+      <DependentUpon>OpeningRight.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -199,6 +241,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Heart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Assets\Scene_Opening.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Assets\Card_HappyBirthdayLeft.png" />
     <Resource Include="Assets\Card_HappyBirthdayRight.png" />
     <Resource Include="Assets\PresentBoxLeft.png" />
